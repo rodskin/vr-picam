@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <title></title>
+        <style>
+#left,
+#right {
+    transform: scaleY(-1);
+}
+        </style>
+    </head>
+    <body>
+        <img id="left" src="http://{pi_addresss}/picam/cam_pic.php?time=1472558524572&pDelay=16666" />
+        <img id="right" src="http://{pi_addresss}/picam/cam_pic.php?time=1472558524572&pDelay=16666" />
+        <script>
+window.setInterval(function() {
+    document.getElementById('left').src = "http://{pi_addresss}/picam/cam_pic.php?pDelay=16666&time=" + new Date().getTime();
+    document.getElementById('right').src = "http://{pi_addresss}/picam/cam_pic.php?pDelay=16666&time=" + new Date().getTime();
+}, 50);
+        </script>
+    </body>
+</html>
